@@ -21,9 +21,13 @@ window.addEventListener('load', () => {
 			createdAt: new Date().getTime()
 		}
 
-		todos.push(todo);
-
-		localStorage.setItem('todos', JSON.stringify(todos));
+		if(todo.content != ""){
+			todos.push(todo);
+			localStorage.setItem('todos', JSON.stringify(todos));
+		}
+		else{
+			alert("Enter some task");
+		}
 
 		// Reset the form
 		e.target.reset();
